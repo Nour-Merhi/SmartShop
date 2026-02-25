@@ -73,7 +73,7 @@ There are PHPUnit/Pest test stubs under `tests/`.
 
 # More Info 
 
-Read the report attached in docs folder (docs/SmartShop_Report.pdf)
+Read the report attached in docs folder `(docs/SmartShop_Report.pdf)`
 
 ---
 
