@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="{{ asset('js/script.js') }}" defer></script>
+    <title>admin Dashborad</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{ $admin->user->full_name }}!</h1>
+        <div id="btn">
+            <button type="button" onclick="toggleProductForm()">Product Form</button>
+            <button type="button" onclick="toggleCustomerTable()">Customer Table</button>
+            <button type="button" onclick="toggleDeliveryTable()">Delivery Table</button>
+        </div>
+
+    </header>
+    <section id="product-form" style="display: block;">
+        <form action="{{ route('admin.product.add')}}" method="POST">
+            @csrf
+
+            <label for="name">Product Name:</label>
+            <input id="name" name="name" type="text" required>
+
+            <label for="price">Product Price:</label>
+            <input id="price" name="price" type="text" required>
+
+            <label for="description">Product Description:</label>
+            <input id="description" name="description" type="text" required>
+
+            <label for="image1">Product Image 1:</label>
+            <input id="image1" name="image1" type="url" required>
+            
+            <label for="image2">Product Image 2:</label>
+            <input id="image2" name="image2" type="url" required>
+
+            <label for="image3">Product Image 3:</label>
+            <input id="image3" name="image3" type="url" required>
+
+            <label for="image4">Product Image 4:</label>
+            <input id="image4" name="image4" type="url" required>
+
+            <label for="isFeatured">Is product Featured?</label>
+            <input id="isFeatured" name="isFeatured" type="text" placeholder="Yes or No.." required>
+
+            <label for="sales_count">Sale Count:</label>
+            <input id="sales_count" name="sales_count" type="number" min="0" required>
+
+            <button type="submit" onclick="showAddProductConfirm()">Add Product</button>
+        </form>
+    </section>
+
+    <section id="customer_table" style="display: none;">
+        <h2>Logged-in Customers</h2>
+
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Customer Status</th>
+            </tr>
+
+            @foreach($customers as $customer)
+            <tr>
+                <td>{{ $customer->user->full-name}}</td>
+                <td>{{ $customer->user->email }}</td>
+                <td>{{ $customer->user->created_at }}</td>
+                <td>{{ $customer->user->updated_at }}</td>
+                <td>{{ $customer->user->user_status }}</td>
+            </tr>
+            @endforeach
+        </table>
+    </section>
+
+    <section id="delivery_table" style="display: none;">
+        <h2>Logged-in Customers</h2>
+
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <th>Email</th>
+                <th>Created At</th>
+                <th>Updated At</th>
+                <th>Customer Status</th>
+            </tr>
+
+            @foreach($deliveryMan as $delivery)
+            <tr>
+                <td>{{ $delivery->user->full-name}}</td>
+                <td>{{ $delivery->user->email }}</td>
+                <td>{{ $delivery->user->created_at }}</td>
+                <td>{{ $delivery->user->updated_at }}</td>
+                <td>{{ $delivery->user->user_status }}</td>
+            </tr>
+            @endforeach
+        </table>
+    </section>
+</body>
+</html>

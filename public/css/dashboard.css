@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+body{
+    background-color: #e1e1e1;
+}
+header{
+    padding: 20px 20px 0 20px;
+    text-align: center;
+    font-size: 25px;
+}
+button{
+    border: none;
+    background-color: orange;
+    border-radius: 3px;
+    padding: 10px;
+    font-weight: 600;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+button:hover{
+    transform: translateY(-3px);
+}
+#btn{
+    align-items: center;
+    margin: 20px 0 ;
+}
+#btn button{
+    margin-right: 20px;
+}
+
+/*product form*/
+.form,
+#customer_table,
+#delivery_table{
+    border: 1px solid #cccbcb;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+}
+.form form,
+#create-delivery-form form{ 
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.form form input{
+    width: 100%;
+    border: 1px solid #e1e1e1;
+    outline: none;
+    padding: 8px 9px 10px 9px;
+    border-radius: 5px;
+}
+.form form label{
+    margin: 15px 0 10px 0;
+    font-weight: 600;
+}
+.form button{
+    width: 100%;
+    margin-top: 30px;
+    font-size: 16px;
+}
+
+
+
+/*Customer Table*/
+#customer_table,
+#delivery_table{
+    text-align: center;
+    font-size: 18px;
+}
+#customer_table table,
+#delivery_table table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+#customer_table table th,
+#delivery_table table th{
+    border: 1px solid #e1e1e1;
+    padding: 10px;
+    font-size: 16px;
+}
+#customer_table table td,
+#delivery_table table td{
+    border: 1px solid #e2e9e1;
+    padding: 10px;
+    font-size: 13px;
+}
+
+/*Delivery table*/
+#delivery_table #create-delivery-form{
+    text-align: left;
+    display: inline-block;
+    font-size: 16px;
+
+}
+
